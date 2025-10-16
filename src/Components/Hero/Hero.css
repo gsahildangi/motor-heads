@@ -1,13 +1,17 @@
 .hero {
-    margin:0px 150px;
+    margin:0px auto;
     margin-top: 170px;
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
 .hero-text {
     color: #fff;
-    font-size: 110px;
+    font-size: clamp(2rem, 6vw, 6.875rem); /* scales from 32px to ~110px */
+    /* clamp(min, preferred, max) makes your text scale responsively.
+    Also reduces risk of breaking layout on different screens. */
     font-weight: 500;
-    line-height: 130px;
+    line-height: 1.2;
 }
 
 .hero-explore {
