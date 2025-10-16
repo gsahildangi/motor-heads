@@ -19,17 +19,17 @@ const App = () => {
   ];
 
   const [heroCount, setHeroCount] = useState(0);
-  const [playStatus, setPlayStatus] = useState(true);
+  const [playStatus, setPlayStatus] = useState(false);
 
-  // useEffect(()=> {
-  //   //  console.log("hy");
-  //    const interval = setInterval(() => {
-  //         //  console.log("hy from inside");
-  //         setHeroCount((prevCount) => {return prevCount===4?0:prevCount+1} )
-  //     },3000);  
+  useEffect(()=> {
+    //  console.log("hy");
+     const interval = setInterval(() => {
+          //  console.log("hy from inside");
+          setHeroCount((prevCount) => {return prevCount===4?0:prevCount+1} )
+      },3000);  
 
-  //     return () => clearInterval(interval);
-  //  },[])
+      return () => clearInterval(interval);
+   },[])
 
 
   return (
