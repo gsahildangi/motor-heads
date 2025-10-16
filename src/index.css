@@ -2,4 +2,8 @@
    margin: 0;
    padding: 0;
    font-family: Poppins;   
+<<<<<<< HEAD
+=======
+    overflow-x: hidden; 
+>>>>>>> ba95d9d9d6d562d2fc77fee61f38aebeac4f8791
 }
