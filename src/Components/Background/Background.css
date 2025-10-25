@@ -1,17 +1,11 @@
-.background {
-  height: 100%;
-  width: 100%;
-  position:fixed;
-  float: left;
+/* .background {
+  position: fixed;
   top: 0;
   left: 0;
-  /* right: 0; */
-  /* bottom: 0; */
-  /* padding: none; */  
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
-  z-index: -1; 
-  margin: 0;
-  padding: 0;
+  z-index: -1;
 }
 
 @keyframes fadeIn {
@@ -21,4 +15,4 @@
 
 .fade-in {
   animation: fadeIn 500ms ease-in-out;
-}
+} */

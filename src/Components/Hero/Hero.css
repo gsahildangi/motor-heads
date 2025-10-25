@@ -1,22 +1,24 @@
-.hero {
-    margin: 0px auto;
+/* .hero {
+    margin: 0 auto;
     margin-top: 170px;
-    max-width: 1200px;
-    width: calc(100% - 40px);
-    padding: 0 20px;
+    max-width: 1160px;
+    width: calc(100% - 60px);
+    padding: 0 30px;
+    box-sizing: border-box;
+    overflow: hidden !important;
+}
+
+.hero * {
+    max-width: 100% !important;
 }
 
 .hero-text {
     color: #fff;
-    font-size: 32px;
-    /* Start with fixed size */
-    /* font-size: clamp(2rem, 6vw, 6.875rem); scales from 32px to ~110px */
-    /* clamp(min, preferred, max) makes your text scale responsively.
-    Also reduces risk of breaking layout on different screens. */
+    font-size: clamp(1.5rem, 4vw, 3rem);
     font-weight: 500;
     line-height: 1.2;
+    max-width: 100%;
     word-break: break-word;
-    /* ADD THIS - prevents text from overflowing */
     overflow-wrap: break-word;
 }
 
@@ -41,21 +43,18 @@
 
 .hero-dot-play {
     color: #fff;
-    display: flex;
+    display: flex;   
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    /* Fallback spacing */
-    flex-wrap: wrap;
-    /* Wraps on small screens */
+    margin-top: 50px;
+    gap: 50px;
 }
 
 .hero-dots {
     display: flex;
     align-items: center;
-    gap: 27px;
+    gap: 20px;
     list-style: none;
-    margin-top: 50px;
 }
 
 .hero-dot {
@@ -73,40 +72,15 @@
 .hero-play {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
+    margin-left:auto;
 }
 
 .hero-play p {
     color: #fff;
-    font-size: 19px;
+    font-size: 16px;
 }
 
-/* Responsive sizes */
-@media (min-width: 640px) {
-    .hero-dot-play {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-    }
-        /* .hero-text {
-            font-size: 48px;
-        } */
-}
-
-@media (min-width: 768px) {
-    .hero-text {
-        font-size: 64px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-text {
-        font-size: 80px;
-    }
-}
-
-@media (min-width: 1280px) {
-    .hero-text {
-        font-size: 110px;
-    }
-}
+.hero-play img {
+    cursor: pointer;
+} */
