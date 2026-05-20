@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-zinc-950;
+  }
+}
+
 @layer utilities {
   .animate-fadeIn {
     animation: fadeIn 500ms ease-in-out;

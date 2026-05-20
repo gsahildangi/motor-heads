@@ -1,36 +1,55 @@
-import video2 from '../../assets/video2.mp4'
-import image1 from '../../assets/image1.jpg'
-import image2 from '../../assets/image2.jpg'
-import image3 from '../../assets/image3.jpg'
-import image4 from '../../assets/image4.jpg'
-import image5 from '../../assets/image5.jpg'
+import { useEffect, useState } from 'react'
 
-const Background = ({ playStatus, heroCount }) => {
+const bgClasses =
+  'fixed inset-0 w-full h-full object-cover z-0 animate-fadeIn'
 
-    const bgClasses = "fixed top-0 left-0 w-screen h-screen object-cover -z-10 animate-fadeIn";
+const Background = ({ playStatus, heroCount, images }) => {
+  const [videoSrc, setVideoSrc] = useState(null)
 
-    if (playStatus) {
-        return (
-            <video className={bgClasses} autoPlay loop muted>
-                <source src={video2} type='video/mp4' />
-            </video>
-        )
+  useEffect(() => {
+    if (!playStatus || videoSrc) return
+
+    import('../../assets/video2.mp4').then((module) => {
+      setVideoSrc(module.default)
+    })
+  }, [playStatus, videoSrc])
+
+  if (playStatus) {
+    if (!videoSrc) {
+      return (
+        <img
+          src={images[heroCount]}
+          className={bgClasses}
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+        />
+      )
     }
-    else if (heroCount === 0) {
-        return <img src={image1} className={bgClasses} alt="" />
-    }
-    else if (heroCount === 1) {
-        return <img src={image2} className={bgClasses} alt="" />
-    }
-    else if (heroCount === 2) {
-        return <img src={image3} className={bgClasses} alt="" />
-    }
-    else if (heroCount === 3) {
-        return <img src={image4} className={bgClasses} alt="" />
-    }
-    else if (heroCount === 4) {
-        return <img src={image5} className={bgClasses} alt="" />
-    }
+
+    return (
+      <video
+        className={bgClasses}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+      >
+        <source src={videoSrc} type="video/mp4" />
+      </video>
+    )
+  }
+
+  return (
+    <img
+      src={images[heroCount]}
+      className={bgClasses}
+      alt=""
+      fetchPriority="high"
+      decoding="async"
+    />
+  )
 }
 
 export default Background
