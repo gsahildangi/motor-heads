@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 const IDLE_MS = 4000
+const SCROLL_TOP_THRESHOLD = 80
 
 export function useAutoPlayVideo(heroRef) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
@@ -50,7 +51,7 @@ export function useAutoPlayVideo(heroRef) {
     const onScroll = () => {
       stopVideo()
 
-      if (heroInView && window.scrollY < 80) {
+      if (heroInView && window.scrollY < SCROLL_TOP_THRESHOLD) {
         startIdleTimer()
       }
     }

@@ -10,11 +10,15 @@
 
 @layer utilities {
   .animate-fadeIn {
-    animation: fadeIn 500ms ease-in-out;
+    animation: fadeIn 700ms ease-in-out;
   }
-  
+
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }

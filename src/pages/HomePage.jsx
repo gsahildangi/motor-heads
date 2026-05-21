@@ -6,7 +6,7 @@ import Hero from '../Components/Hero/Hero'
 import { HERO_IMAGES } from '../constants/heroAssets'
 import { useAutoPlayVideo } from '../hooks/useAutoPlayVideo'
 import { usePreloadImages } from '../hooks/usePreloadImages'
-import { lockScroll, scrollToCars, unlockScroll } from '../utils/scrollToCars'
+import { scrollToCars } from '../utils/scrollToCars'
 
 const heroData = [
   { text1: 'Explore', text2: 'what moves you' },
@@ -23,11 +23,6 @@ const HomePage = () => {
   const { isVideoPlaying, stopVideo } = useAutoPlayVideo(heroRef)
 
   usePreloadImages(HERO_IMAGES, heroCount)
-
-  useEffect(() => {
-    lockScroll()
-    return () => unlockScroll()
-  }, [])
 
   useEffect(() => {
     if (location.state?.scrollTo !== 'explore-cars') return
@@ -58,7 +53,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div ref={heroRef} className="relative h-screen overflow-hidden">
+      <div ref={heroRef} className="relative h-screen">
         <Background
           playStatus={isVideoPlaying}
           heroCount={heroCount}
